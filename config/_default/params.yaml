@@ -32,7 +32,7 @@ marketing:
 header:
   navbar:
     enable: true
-    blox: "navbar"
+    block: "navbar"
     align: "center"
     fixed_to_top: true
     logo:
