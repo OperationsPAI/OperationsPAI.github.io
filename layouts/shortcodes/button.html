@@ -1,0 +1,142 @@
+{{/*
+Button Shortcode
+Renders a customizable button with various styles, sizes, and configurations.
+
+Parameters:
+- url (string, required): Button destination URL
+- text (string, optional): Button text (overrides inner content)
+- new_tab (boolean, default false): Open link in new tab
+- style (string, default "primary"): Button style (primary, secondary, outline, ghost)
+- size (string, default "md"): Button size (sm, md, lg, xl)
+- align (string, default "left"): Button alignment (left, center, right)
+- icon (string, optional): Icon name from Hero Icons
+- icon_position (string, default "left"): Icon position (left, right)
+- rounded (string, default "md"): Border radius (sm, md, lg, xl, full)
+- disabled (boolean, default false): Disabled state
+*/}}
+
+{{/* Set default values */}}
+{{ $url := .Get "url" | default "#" }}
+{{ $text := .Get "text" | default (.Inner | markdownify | safeHTML) }}
+{{ $new_tab := .Get "new_tab" | default false }}
+{{ $style := .Get "style" | default "primary" }}
+{{ $size := .Get "size" | default "md" }}
+{{ $align := .Get "align" | default "left" }}
+{{ $icon := .Get "icon" }}
+{{ $icon_position := .Get "icon_position" | default "left" }}
+{{ $rounded := .Get "rounded" | default "md" }}
+{{ $disabled := .Get "disabled" | default false }}
+
+{{/* Determine if URL is external */}}
+{{ $is_external := false }}
+{{ if hasPrefix $url "http" }}
+  {{ $is_external = true }}
+{{ end }}
+
+{{/* Set target and rel attributes */}}
+{{ $target := "" }}
+{{ $rel := "" }}
+{{ if $new_tab }}
+  {{ $target = "_blank" }}
+  {{ if $is_external }}
+    {{ $rel = "noopener noreferrer" }}
+  {{ else }}
+    {{ $rel = "noopener" }}
+  {{ end }}
+{{ else if $is_external }}
+  {{ $rel = "noreferrer" }}
+{{ end }}
+
+{{/* Style classes */}}
+{{ $style_classes := "" }}
+{{ if eq $style "primary" }}
+  {{ $style_classes = "bg-blue-600 hover:bg-blue-700 text-white border-blue-600 hover:border-blue-700" }}
+{{ else if eq $style "secondary" }}
+  {{ $style_classes = "bg-gray-600 hover:bg-gray-700 text-white border-gray-600 hover:border-gray-700" }}
+{{ else if eq $style "outline" }}
+  {{ $style_classes = "bg-transparent hover:bg-blue-50 text-blue-600 border-blue-600 hover:bg-blue-600 hover:text-white" }}
+{{ else if eq $style "ghost" }}
+  {{ $style_classes = "bg-transparent hover:bg-gray-100 text-gray-600 border-transparent hover:border-gray-300" }}
+{{ end }}
+
+{{/* Size classes */}}
+{{ $size_classes := "" }}
+{{ if eq $size "sm" }}
+  {{ $size_classes = "px-3 py-1.5 text-sm" }}
+{{ else if eq $size "md" }}
+  {{ $size_classes = "px-4 py-2 text-base" }}
+{{ else if eq $size "lg" }}
+  {{ $size_classes = "px-6 py-3 text-lg" }}
+{{ else if eq $size "xl" }}
+  {{ $size_classes = "px-8 py-4 text-xl" }}
+{{ end }}
+
+{{/* Alignment classes */}}
+{{ $align_classes := "" }}
+{{ if eq $align "center" }}
+  {{ $align_classes = "mx-auto" }}
+{{ else if eq $align "right" }}
+  {{ $align_classes = "ml-auto" }}
+{{ end }}
+
+{{/* Rounded classes */}}
+{{ $rounded_classes := "" }}
+{{ if eq $rounded "sm" }}
+  {{ $rounded_classes = "rounded-sm" }}
+{{ else if eq $rounded "md" }}
+  {{ $rounded_classes = "rounded-md" }}
+{{ else if eq $rounded "lg" }}
+  {{ $rounded_classes = "rounded-lg" }}
+{{ else if eq $rounded "xl" }}
+  {{ $rounded_classes = "rounded-xl" }}
+{{ else if eq $rounded "full" }}
+  {{ $rounded_classes = "rounded-full" }}
+{{ end }}
+
+{{/* Disabled classes */}}
+{{ $disabled_classes := "" }}
+{{ if $disabled }}
+  {{ $disabled_classes = "opacity-50 cursor-not-allowed" }}
+{{ end }}
+
+{{/* Icon SVG paths (Hero Icons) */}}
+{{ $icon_paths := dict 
+  "download" "M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"
+  "arrow-right" "M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+  "rocket-launch" "M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"
+  "arrow-top-right-on-square" "M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+  "document-arrow-down" "M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m.75 12l3 3m0 0l3-3m-3 3v-6m-1.5-9H5.25a2.25 2.25 0 00-2.25 2.25v10.5a2.25 2.25 0 002.25 2.25h13.5a2.25 2.25 0 002.25-2.25V11.25a2.25 2.25 0 00-2.25-2.25h-2.25"
+  "cursor-arrow-rays" "M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M21.75 12H19.5m-.166 5.834l-1.591-1.591M12 19.5V21.75m-5.834-.166l1.591-1.591M2.25 12H4.5m.166-5.834l1.591 1.591"
+}}
+
+{{/* Container div for alignment */}}
+<div class="button-container {{ if eq $align "center" }}text-center{{ else if eq $align "right" }}text-right{{ end }}">
+  <a href="{{ $url }}" 
+     class="inline-flex items-center justify-center border font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 {{ $style_classes }} {{ $size_classes }} {{ $rounded_classes }} {{ $disabled_classes }}"
+     {{ with $target }}target="{{ . }}"{{ end }}
+     {{ with $rel }}rel="{{ . }}"{{ end }}
+     {{ if $disabled }}aria-disabled="true"{{ end }}
+     role="button">
+    
+    {{/* Icon before text */}}
+    {{ if and $icon (eq $icon_position "left") }}
+      {{ with index $icon_paths $icon }}
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="{{ . }}"></path>
+        </svg>
+      {{ end }}
+    {{ end }}
+    
+    {{/* Button text */}}
+    <span>{{ $text }}</span>
+    
+    {{/* Icon after text */}}
+    {{ if and $icon (eq $icon_position "right") }}
+      {{ with index $icon_paths $icon }}
+        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="{{ . }}"></path>
+        </svg>
+      {{ end }}
+    {{ end }}
+  </a>
+</div>
