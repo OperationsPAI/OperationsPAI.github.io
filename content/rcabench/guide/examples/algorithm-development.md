@@ -3,9 +3,20 @@ title: Algorithm Development
 weight: 1
 ---
 
-This guide explains how to develop, package, and integrate custom RCA algorithms with RCABench.
-
 ## Algorithm Requirements
+
+### Basic Requirements
+
+> [!IMPORTANT]
+>
+> All RCA algorithms must meet these requirements
+>
+> 1.  **Containerized**: Packaged as Docker containers
+> 2.  **Standard Interface**: Follow RCABench algorithm interface
+> 3.  **Data Format**: Accept standard observability data formats
+> 4.  **Output Format**: Produce standardized JSON results
+> 5.  **Error Handling**: Graceful error handling and logging
+> 6.  **Resource Limits**: Respect CPU/memory constraints
 
 ### Input Data Types
 

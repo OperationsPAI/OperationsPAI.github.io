@@ -108,6 +108,19 @@ specs=[
 ],
 ```
 
+---
+
+## 📋 Best Practices
+
+> [!NOTE]
+>
+> 1. **Start Small**: Begin with low-impact faults to understand > system behavior
+> 2. **Monitor Impact**: Watch system metrics during fault injection
+> 3. **Document Scenarios**: Keep detailed records of fault > configurations
+> 4. **Safety First**: Always have rollback procedures ready
+
+---
+
 ## 📚 Reference
 
 For more fault types and parameters, see:

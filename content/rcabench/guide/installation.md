@@ -128,51 +128,34 @@ minikube addons enable ingress
 #### Step 1: Install Dependencies
 
 ```bash
-make check-prerequisites
+devbox shell
 
-# Install missing tools if needed
-# For skaffold (if not already installed):
-curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/latest/skaffold-linux-amd64
-sudo install skaffold /usr/local/bin/
+make check-prerequisites
 ```
 
 #### Step 2: Configure Storage
 
-1. For production deployments, set up persistent storage:
+For production deployments, set up persistent storage:
+
+> [!TIP]
+> 📖 **Original Tutorial**: This step is based on the [OpenEBS Installation](https://openebs.io/docs/quickstart-guide/installation).
 
 ```bash
-# Create namespace
-kubectl create namespace exp
 
-# Apply persistent volume configuration
-# Edit scripts/k8s/pv.yaml to match your storage setup
-kubectl apply -f scripts/k8s/pv.yaml
-```
+# Add OpenEBS Helm repository
+helm repo add openebs https://openebs.github.io/openebs
+helm repo update
 
-2. Example PV configuration for local storage:
-
-```yaml
-apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: rcabench-dataset-pv
-spec:
-  capacity:
-    storage: 50Gi
-  accessModes:
-    - ReadWriteMany
-  persistentVolumeReclaimPolicy: Retain
-  storageClassName: local-storage
-  local:
-    path: /mnt/data/rcabench_dataset
-  nodeAffinity:
-    required:
-      nodeSelectorTerms:
-        - matchExpressions:
-            - key: kubernetes.io/hostname
-              operator: In
-              values:
-                - your-node-name
+# Install OpenEBS with custom settings
+helm install openebs openebs/openebs --namespace openebs \
+  --create-namespace \
+  --set localpv-provisioner.global.imageRegistry=docker.1ms.run \
+  --set engines.local.lvm.enabled=false \
+  --set engines.local.zfs.enabled=false \
+  --set engines.local.rawfile.enabled=false \
+  --set engines.replicated.mayastor.enabled=false \
+  --set loki.enabled=false \
+  --set alloy.enabled=false
 ```
 
 #### Step 3: Deploy Application
