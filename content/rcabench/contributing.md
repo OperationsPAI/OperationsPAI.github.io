@@ -1,7 +1,7 @@
 ---
 title: Contributing
 date: 2025-09-26
-weight: 4
+weight: 12
 ---
 
 ## 📋 Code of Conduct

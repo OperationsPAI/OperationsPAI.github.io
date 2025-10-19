@@ -1,7 +1,9 @@
 ---
-title: Fault Injection
-weight: 2
+title: Data Collection via Fault Injection
+weight: 4
 ---
+
+描述如何进行故障注入，采集数据，包括常见的故障注入场景、参数配置、数据采集、怎么观察数据采集进度、怎么获取到数据集等、怎么调试等
 
 ## 🚀 Basic Fault Injection Setup
 

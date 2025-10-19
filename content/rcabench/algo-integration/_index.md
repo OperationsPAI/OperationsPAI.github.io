@@ -1,6 +1,6 @@
 ---
-title: Algorithm Development
-weight: 1
+title: Algorithm Development & Integration
+weight: 5
 ---
 
 ## Algorithm Requirements

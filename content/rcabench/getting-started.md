@@ -1,7 +1,7 @@
 ---
 title: Getting Started
 date: 2025-10-17
-weight: 1
+weight: 2
 ---
 
 This document describes how to start RCABench quickly·

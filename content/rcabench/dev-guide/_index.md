@@ -1,6 +1,6 @@
 ---
-title: Guide
-weight: 2
+title: Development Guide
+weight: 10
 type: docs
 sidebar:
   open: true
