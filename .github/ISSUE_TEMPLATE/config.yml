@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💡 GitHub Discussions
+    url: https://github.com/OperationsPAI/operationspai.github.io/discussions
+    about: For general discussions, ideas, and Q&A
+  - name: 📖 Documentation
+    url: https://operationspai.github.io
+    about: Read our documentation for guides and tutorials
