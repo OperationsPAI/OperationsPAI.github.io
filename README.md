@@ -164,6 +164,7 @@ See our **[detailed roadmap](ROADMAP.md)** for the full 18-month plan.
 - [Technical Architecture](https://operationspai.github.io/architecture)
 - [API Reference](https://operationspai.github.io/api)
 - [Quick Start Guide](https://operationspai.github.io/quickstart)
+- [FAQs](docs/FAQ.md)
 - Repository-specific docs in each repo's README
 
 ---
