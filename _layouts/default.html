@@ -21,9 +21,39 @@
   {% include header.html %}
 
   <main id="main-content">
+    {% if page.layout == 'default' %}
+    <article class="content">
+      {{ content }}
+    </article>
+    {% else %}
     {{ content }}
+    {% endif %}
   </main>
 
   {% include footer.html %}
+
+  <!-- Mermaid: only load if page contains mermaid blocks -->
+  <script>
+    if (document.querySelector('code.language-mermaid')) {
+      var s = document.createElement('script');
+      s.src = 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js';
+      s.onload = function() {
+        document.querySelectorAll('code.language-mermaid').forEach(function(el) {
+          var pre = el.parentElement;
+          var div = document.createElement('div');
+          div.className = 'mermaid';
+          div.textContent = el.textContent;
+          pre.parentElement.replaceChild(div, pre);
+        });
+        mermaid.initialize({ theme: 'base', themeVariables: {
+          primaryColor: '#F5F0E8', primaryBorderColor: '#B8860B',
+          primaryTextColor: '#2C2825', lineColor: '#B8860B',
+          secondaryColor: '#EDE6D8', tertiaryColor: '#FDFBF7',
+          fontFamily: 'Inter, sans-serif'
+        }});
+      };
+      document.body.appendChild(s);
+    }
+  </script>
 </body>
 </html>
