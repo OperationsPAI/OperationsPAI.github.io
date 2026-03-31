@@ -1,0 +1,66 @@
+# 网站基础配置
+title: OperationsPAI
+email: contact@operationspai.org
+description: >-
+  Building the Future of Root Cause Analysis Together.
+  An open-source community building the world's first self-evolving
+  training environment for Root Cause Analysis in microservices.
+
+# GitHub Pages 主题
+theme: jekyll-theme-cayman
+
+# 网站 URL
+url: https://operationspai.github.io
+baseurl: ""
+
+# 社交媒体
+show_downloads: false
+show_github: true
+
+github:
+  owner_name: OperationsPAI
+  owner_url: https://github.com/OperationsPAI
+
+# 导航链接
+navigation:
+  - title: 首页
+    url: /
+  - title: 愿景
+    url: /docs/community/vision
+  - title: 价值观
+    url: /docs/community/values
+  - title: 路线图
+    url: /ROADMAP
+  - title: 贡献指南
+    url: /CONTRIBUTING
+
+# 插件
+plugins:
+  - jekyll-relative-links
+  - jekyll-readme-index
+
+# 相对链接支持
+relative_links:
+  enabled: true
+  collections: true
+
+# 包含的文件
+include:
+  - README.md
+  - ROADMAP.md
+  - CONTRIBUTING.md
+  - GOVERNANCE.md
+  - CODE_OF_CONDUCT.md
+  - docs
+
+# Markdown 设置
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# 排除的文件
+exclude:
+  - .git
+  - .github
+  - "*.gemspec"
