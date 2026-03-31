@@ -5,31 +5,20 @@ description: >-
   An open-source community building the world's first self-evolving
   training environment for Root Cause Analysis in microservices.
 
-# GitHub Pages theme - using minimal for clean look
-theme: jekyll-theme-minimal
-
 # Site URL
 url: https://operationspai.github.io
 baseurl: ""
 
-# Theme settings
-show_downloads: false
-show_github: true
-
-github:
-  owner_name: OperationsPAI
-  owner_url: https://github.com/OperationsPAI
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 
 # Plugins
 plugins:
   - jekyll-relative-links
   - jekyll-readme-index
-
-# Markdown settings
-markdown: kramdown
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
 
 # Include files
 include:
