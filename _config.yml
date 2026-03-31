@@ -34,3 +34,14 @@ exclude:
   - .git
   - .github
   - "*.gemspec"
+
+# Layout defaults
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+  - scope:
+      path: "docs"
+    values:
+      layout: "docs"

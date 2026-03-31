@@ -1,0 +1,21 @@
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="{{ '/' | relative_url }}" class="site-logo">OperationsPAI</a>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+    <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation">
+      <span></span>
+    </label>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>Home</a>
+      <a href="{{ '/docs/community/vision.html' | relative_url }}" {% if page.url contains 'vision' %}class="active"{% endif %}>Vision</a>
+      <a href="{{ '/ROADMAP.html' | relative_url }}" {% if page.url contains 'ROADMAP' %}class="active"{% endif %}>Roadmap</a>
+      <a href="{{ '/CONTRIBUTING.html' | relative_url }}" {% if page.url contains 'CONTRIBUTING' %}class="active"{% endif %}>Contributing</a>
+      <a href="{{ '/docs/FAQ.html' | relative_url }}" {% if page.url contains 'FAQ' %}class="active"{% endif %}>FAQ</a>
+      <a href="https://github.com/OperationsPAI" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</header>

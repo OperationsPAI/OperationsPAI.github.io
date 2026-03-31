@@ -1,0 +1,38 @@
+<!-- Hero: Network graph — interconnected microservice nodes -->
+<svg viewBox="0 0 280 280" fill="none" aria-hidden="true" class="hero-illustration">
+  <style>
+    .node-pulse { animation: node-pulse 3s ease-in-out infinite; }
+    .node-pulse-delay { animation: node-pulse 3s ease-in-out 1.5s infinite; }
+    @keyframes node-pulse { 0%,100% { opacity: 0.7; } 50% { opacity: 1; } }
+  </style>
+  <!-- Connection lines — slightly imperfect paths -->
+  <path d="M140 60 L80 130" stroke="currentColor" stroke-width="1.5" opacity="0.3" stroke-linecap="round"/>
+  <path d="M140 60 L200 120" stroke="currentColor" stroke-width="1.5" opacity="0.3" stroke-linecap="round"/>
+  <path d="M80 130 L60 210" stroke="currentColor" stroke-width="1.5" opacity="0.3" stroke-linecap="round"/>
+  <path d="M80 130 L150 180" stroke="currentColor" stroke-width="1.5" opacity="0.3" stroke-linecap="round"/>
+  <path d="M200 120 L150 180" stroke="currentColor" stroke-width="1.5" opacity="0.3" stroke-linecap="round"/>
+  <path d="M200 120 L230 200" stroke="currentColor" stroke-width="1.5" opacity="0.3" stroke-linecap="round"/>
+  <path d="M150 180 L130 250" stroke="currentColor" stroke-width="1.5" opacity="0.3" stroke-linecap="round"/>
+  <path d="M60 210 L130 250" stroke="currentColor" stroke-width="1.5" opacity="0.3" stroke-linecap="round"/>
+  <path d="M230 200 L130 250" stroke="currentColor" stroke-width="1.5" opacity="0.3" stroke-linecap="round"/>
+  <!-- Nodes -->
+  <circle cx="140" cy="60" r="12" stroke="currentColor" stroke-width="2" fill="none" class="node-pulse"/>
+  <circle cx="140" cy="60" r="4" fill="currentColor" class="node-pulse"/>
+  <circle cx="80" cy="130" r="10" stroke="currentColor" stroke-width="1.5" fill="none" class="node-pulse-delay"/>
+  <circle cx="80" cy="130" r="3.5" fill="currentColor" class="node-pulse-delay"/>
+  <circle cx="200" cy="120" r="10" stroke="currentColor" stroke-width="1.5" fill="none"/>
+  <circle cx="200" cy="120" r="3.5" fill="currentColor"/>
+  <circle cx="150" cy="180" r="14" stroke="currentColor" stroke-width="2" fill="none" class="node-pulse"/>
+  <circle cx="150" cy="180" r="5" fill="currentColor" class="node-pulse"/>
+  <circle cx="60" cy="210" r="8" stroke="currentColor" stroke-width="1.5" fill="none" class="node-pulse-delay"/>
+  <circle cx="60" cy="210" r="3" fill="currentColor" class="node-pulse-delay"/>
+  <circle cx="230" cy="200" r="9" stroke="currentColor" stroke-width="1.5" fill="none"/>
+  <circle cx="230" cy="200" r="3" fill="currentColor"/>
+  <circle cx="130" cy="250" r="11" stroke="currentColor" stroke-width="2" fill="none" class="node-pulse"/>
+  <circle cx="130" cy="250" r="4" fill="currentColor" class="node-pulse"/>
+  <!-- Small satellite dots -->
+  <circle cx="110" cy="42" r="2" fill="currentColor" opacity="0.4"/>
+  <circle cx="168" cy="48" r="2.5" fill="currentColor" opacity="0.3"/>
+  <circle cx="248" cy="175" r="2" fill="currentColor" opacity="0.4"/>
+  <circle cx="38" cy="195" r="2" fill="currentColor" opacity="0.3"/>
+</svg>
