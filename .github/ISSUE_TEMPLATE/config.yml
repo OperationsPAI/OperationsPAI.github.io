@@ -1,8 +1,11 @@
 blank_issues_enabled: false
 contact_links:
-  - name: 💡 GitHub Discussions
+  - name: Task Assignment
+    url: https://github.com/OperationsPAI/operationspai.github.io/issues/new?template=task_assignment.md
+    about: For maintainers to assign tasks to RAs and community members
+  - name: GitHub Discussions
     url: https://github.com/OperationsPAI/operationspai.github.io/discussions
     about: For general discussions, ideas, and Q&A
-  - name: 📖 Documentation
+  - name: Documentation
     url: https://operationspai.github.io
     about: Read our documentation for guides and tutorials
