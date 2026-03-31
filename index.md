@@ -7,26 +7,26 @@ title: OperationsPAI
 
 OperationsPAI is an **open-source community** building the world's first **self-evolving training environment** for Root Cause Analysis (RCA) in microservices.
 
-## 🚀 快速开始
+## 🚀 Quick Start
 
-- [了解我们的愿景](docs/community/vision.md)
-- [查看项目路线图](ROADMAP.md)
-- [参与贡献](CONTRIBUTING.md)
-- [常见问题](docs/FAQ.md)
+- [Our Vision](docs/community/vision.md)
+- [Project Roadmap](ROADMAP.md)
+- [Contributing Guide](CONTRIBUTING.md)
+- [FAQ](docs/FAQ.md)
 
-## 📚 文档
+## 📚 Documentation
 
-| 文档 | 描述 |
-|------|------|
-| [愿景与使命](docs/community/vision.md) | 我们的长期目标 |
-| [核心价值观](docs/community/values.md) | 指导我们的原则 |
-| [路线图](ROADMAP.md) | 项目时间线和里程碑 |
-| [治理模式](GOVERNANCE.md) | 决策方式 |
-| [贡献指南](CONTRIBUTING.md) | 如何参与 |
-| [行为准则](CODE_OF_CONDUCT.md) | 社区规范 |
-| [FAQ](docs/FAQ.md) | 常见问题 |
+| Document | Description |
+|----------|-------------|
+| [Vision & Mission](docs/community/vision.md) | Our long-term goals |
+| [Core Values](docs/community/values.md) | Principles that guide us |
+| [Roadmap](ROADMAP.md) | Project timeline and milestones |
+| [Governance](GOVERNANCE.md) | How decisions are made |
+| [Contributing](CONTRIBUTING.md) | How to get involved |
+| [Code of Conduct](CODE_OF_CONDUCT.md) | Community standards |
+| [FAQ](docs/FAQ.md) | Frequently asked questions |
 
-## 🤝 加入我们
+## 🤝 Join Us
 
 - 💬 [GitHub Discussions](https://github.com/OperationsPAI/operationspai.github.io/discussions)
 - 🐦 [Twitter](https://twitter.com/operationspai)
