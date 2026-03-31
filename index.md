@@ -7,14 +7,14 @@ title: OperationsPAI
 
 OperationsPAI is an **open-source community** building the world's first **self-evolving training environment** for Root Cause Analysis (RCA) in microservices.
 
-## 🚀 Quick Start
+## Quick Start
 
 - [Our Vision](docs/community/vision.md)
 - [Project Roadmap](ROADMAP.md)
 - [Contributing Guide](CONTRIBUTING.md)
 - [FAQ](docs/FAQ.md)
 
-## 📚 Documentation
+## Documentation
 
 | Document | Description |
 |----------|-------------|
@@ -26,12 +26,12 @@ OperationsPAI is an **open-source community** building the world's first **self-
 | [Code of Conduct](CODE_OF_CONDUCT.md) | Community standards |
 | [FAQ](docs/FAQ.md) | Frequently asked questions |
 
-## 🤝 Join Us
+## Join Us
 
-- 💬 [GitHub Discussions](https://github.com/OperationsPAI/operationspai.github.io/discussions)
-- 🐦 [Twitter](https://twitter.com/operationspai)
-- ⭐ [GitHub](https://github.com/OperationsPAI)
+- [GitHub Discussions](https://github.com/OperationsPAI/operationspai.github.io/discussions)
+- [Twitter](https://twitter.com/operationspai)
+- [GitHub](https://github.com/OperationsPAI)
 
 ---
 
-*Built with ❤️ by the OperationsPAI Community*
+*Built with love by the OperationsPAI Community*
